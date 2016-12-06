@@ -9,5 +9,303 @@
 </head>
 	
 <body>
+<table id="page_table">
+<tr>
+	<td id="title_row">
+	<table id="title_table">
+	<tr>
+		<td id="title_cell">
+			<center><font id="title">Welcome to CinemaStar</font></center>
+		</td>
+	</tr>
+	</table>
+	</td>
+</tr>
+<tr>
+	<td>
+	<div class="space">
+	</div>
+	</td>
+</tr>
+<form action="admin.php" method="post">
+<tr id="form_row">
+	<td>
+			<div class="form_box">
+				<div class="form_movie">
+					Movie:
+					<input type="text" name="movie">
+				</div>
+				<div class="form_start_date">
+					Start date:
+					<input type="date" name="start_date">
+				</div>
+				<div class="form_end_date">
+					End date:
+					<input type="date" name="end_date">
+				</div>
+			</div>
+	</td>
+</tr>
+<tr>
+	<tr>
+	<td>
+	<div class="space">
+	</div>
+	</td>
+	</tr>
+</tr>
+<tr id="cinemas_table_row">
+	<td>
+	<div class="cinemas">
+		<table id="cinemas_table">
+		<tr id="cinemas_row">
+			<div class="cinema_box">
+				<div class="cinema">
+					New York Star
+					<INPUT type = "checkbox" name = "cinema_group[]" value = "New_York_Star" checked>
+				</div>
+				<div class="showtime">
+					13:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "13_00" checked><br>
+					14:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "14_00" checked><br>
+					15:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "15_00" checked><br>
+					16:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "16_00" checked><br>
+					17:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "17_00" checked><br>
+					18:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "18_00" checked><br>
+					19:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "19_00" checked><br>
+					20:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "20_00" checked><br>
+					21:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "21_00" checked><br>
+					22:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "22_00" checked><br>
+					23:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "23_00" checked><br>
+					00:00
+					<INPUT type = "checkbox" name = "NY_time_group[]" value = "00_00" checked><br>
+				</div>
+			</div>
+			
+			<div class="cinema_box">
+				<div class="cinema">
+					Whiskonsin Star
+					<INPUT type = "checkbox" name = "cinema_group[]" value = "Whiskonsin_Star" checked>
+				</div>
+				<div class="showtime">
+					13:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "13_00" checked><br>
+					14:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "14_00" checked><br>
+					15:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "15_00" checked><br>
+					16:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "16_00" checked><br>
+					17:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "17_00" checked><br>
+					18:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "18_00" checked><br>
+					19:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "19_00" checked><br>
+					20:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "20_00" checked><br>
+					21:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "21_00" checked><br>
+					22:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "22_00" checked><br>
+					23:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "23_00" checked><br>
+					00:00
+					<INPUT type = "checkbox" name = "Whiskonsin_time_group[]" value = "00_00" checked><br>
+				</div>
+			</div>
+			
+			<div class="cinema_box">
+				<div class="cinema">
+					Paris Star
+					<INPUT type = "checkbox" name = "cinema_group[]" value = "Paris_Star" checked>
+				</div>
+				<div class="showtime">
+					13:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "13_00" checked><br>
+					14:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "14_00" checked><br>
+					15:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "15_00" checked><br>
+					16:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "16_00" checked><br>
+					17:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "17_00" checked><br>
+					18:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "18_00" checked><br>
+					19:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "19_00" checked><br>
+					20:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "20_00" checked><br>
+					21:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "21_00" checked><br>
+					22:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "22_00" checked><br>
+					23:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "23_00" checked><br>
+					00:00
+					<INPUT type = "checkbox" name = "Paris_time_group[]" value = "00_00" checked><br>
+				</div>
+			</div>
+			
+			<div class="cinema_box">
+				<div class="cinema">
+					Athens Star
+					<INPUT type = "checkbox" name = "cinema_group[]" value = "Athens_Star" checked>
+				</div>
+				<div class="showtime">
+					13:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "13_00" checked><br>
+					14:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "14_00" checked><br>
+					15:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "15_00" checked><br>
+					16:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "16_00" checked><br>
+					17:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "17_00" checked><br>
+					18:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "18_00" checked><br>
+					19:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "19_00" checked><br>
+					20:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "20_00" checked><br>
+					21:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "21_00" checked><br>
+					22:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "22_00" checked><br>
+					23:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "23_00" checked><br>
+					00:00
+					<INPUT type = "checkbox" name = "Athens_time_group[]" value = "00_00" checked><br>
+				</div>
+			</div>
+			
+			<div class="cinema_box">
+				<div class="cinema">
+					San Fransisco Star
+					<INPUT type = "checkbox" name = "cinema_group[]" value = "San_Fransisco_Star" checked>
+				</div>
+				<div class="showtime">
+					13:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "13_00" checked><br>
+					14:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "14_00" checked><br>
+					15:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "15_00" checked><br>
+					16:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "16_00" checked><br>
+					17:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "17_00" checked><br>
+					18:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "18_00" checked><br>
+					19:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "19_00" checked><br>
+					20:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "20_00" checked><br>
+					21:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "21_00" checked><br>
+					22:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "22_00" checked><br>
+					23:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "23_00" checked><br>
+					00:00
+					<INPUT type = "checkbox" name = "San_Fransisco_time_group[]" value = "00_00" checked><br>
+				</div>
+			</div>
+			
+			<div class="cinema_box">
+				<div class="cinema">
+					Sydney Star
+					<INPUT type = "checkbox" name = "cinema_group[]" value = "Sydney_Star" checked>
+				</div>
+				<div class="showtime">
+					13:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "13_00" checked><br>
+					14:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "14_00" checked><br>
+					15:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "15_00" checked><br>
+					16:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "16_00" checked><br>
+					17:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "17_00" checked><br>
+					18:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "18_00" checked><br>
+					19:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "19_00" checked><br>
+					20:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "20_00" checked><br>
+					21:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "21_00" checked><br>
+					22:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "22_00" checked><br>
+					23:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "23_00" checked><br>
+					00:00
+					<INPUT type = "checkbox" name = "Sydney_time_group[]" value = "00_00" checked><br>
+				</div>
+			</div>
+			
+			<div class="cinema_box">
+				<div class="cinema">
+					London Star
+					<INPUT type = "checkbox" name = "cinema_group[]" value = "London_Star" checked>
+				</div>
+				<div class="showtime">
+					13:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "13_00" checked><br>
+					14:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "14_00" checked><br>
+					15:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "15_00" checked><br>
+					16:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "16_00" checked><br>
+					17:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "17_00" checked><br>
+					18:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "18_00" checked><br>
+					19:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "19_00" checked><br>
+					20:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "20_00" checked><br>
+					21:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "21_00" checked><br>
+					22:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "22_00" checked><br>
+					23:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "23_00" checked><br>
+					00:00
+					<INPUT type = "checkbox" name = "London_time_group[]" value = "00_00" checked><br>
+				</div>
+			</div>
+		</tr>
+		</table>
+	</div>
+	</td>
+</tr>
+<tr>
+	<td>
+	<div class="space">
+	</div>
+	</td>
+</tr>
+<tr>
+	<td id="submit">
+		<input type="submit" value="Submit movie">
+	</td>
+</tr>
+</form>
+</table>
 </body>
 <html>

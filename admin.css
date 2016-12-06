@@ -1,0 +1,81 @@
+ body {
+	background-color: #eeeeee;
+}
+
+div{
+	display: block;
+}
+
+a:link{
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5{
+	margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+    font-size: 1em;
+    text-rendering: optimizelegibility
+}
+
+.cinema_box{
+    position: relative;
+    padding: 4px 5px 0 5px;
+	text-align: center;
+    width: 150px;
+    min-height: 285px;
+	border: solid 2px #111111;
+	box-shadow: 4px 4px 4px 0px #111111;
+	margin: 0 10px 0 0;
+    float: left;
+}
+
+.cinemas{
+	margin: 0 15%;
+}
+
+.form_box{
+	position: relative;
+    padding: 4px 5px 0 5px;
+	text-align: center;
+    width: 150px;
+    min-height: 285px;
+	border: solid 2px #111111;
+	box-shadow: 4px 4px 4px 0px #111111;
+	margin: 0 45%;
+    float: left;
+}
+
+.space{
+	height: 40px;
+    padding: 0 10px;
+    background: #eeeeee;
+    margin-bottom: 15px;
+    line-height: 40px;
+}
+
+#submit{
+	text-align: center;
+}
+
+#page_table{
+	width: 100%;
+}
+
+#title {
+	font-size: 2em;
+	color: #111111;
+}
+
+#title_cell{
+	text-align: center;
+}
+
+ #title_row{
+	border: solid 2px black;
+ }
+
+#title_table{
+	width: 100%;
+	background-color: orange;
+}
