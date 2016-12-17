@@ -30,20 +30,22 @@ h1, h2, h3, h4, h5{
     float: left;
 }
 
-.cinemas{
-	margin: 0 15%;
-}
-
-.form_box{
+.input_box{
 	position: relative;
     padding: 4px 5px 0 5px;
 	text-align: center;
-    width: 150px;
-    min-height: 285px;
+    width: 250px;
+    min-height: 80px;
 	border: solid 2px #111111;
 	box-shadow: 4px 4px 4px 0px #111111;
-	margin: 0 45%;
+	margin: 0 10px 0 0;
     float: left;
+}
+
+.form_start_date, .form_end_date{
+	position: relative;
+	text-align: center;
+	width: 100%;
 }
 
 .space{
@@ -63,6 +65,10 @@ h1, h2, h3, h4, h5{
 
 #submit{
 	text-align: center;
+}
+
+#movie_input{
+	width: 95%;
 }
 
 #page_table{

@@ -23,6 +23,11 @@
 </tr>
 <tr>
 	<td>
+		<input type="button" name="show_movies" value="Show movies" onclick="location.href='DAO/show_data.php';"/>
+	</td>
+</tr>
+<tr>
+	<td>
 	<div class="space">
 	</div>
 	</td>
@@ -30,25 +35,36 @@
 <form action="admin.php" method="post">
 <tr>
 	<td>
-	<h2 id="movie_and_date">Movie & Date</h2>
+		<h2 id="movie_and_date">Movie & Date</h2>
 	</td>
 </tr>
-<tr id="form_row">
+<tr id="page_form_row">
 	<td>
-			<div class="form_box">
+		<table id="form_table">
+		<tr id="form_row">
+			<div class="input_box">
 				<div class="form_movie">
-					Movie:
-					<input type="text" name="movie">
+					Movie
+					<br><br>
+					<input id="movie_input" type="text" name="movie">
 				</div>
+			</div>
+			<div class = "input_box">
 				<div class="form_start_date">
-					Start date:
+					Start date
+					<br><br>
 					<input type="date" name="start_date" value="2016-01-01">
 				</div>
+			</div>
+			<div class="input_box">
 				<div class="form_end_date">
-					End date:
+					End date
+					<br><br>
 					<input type="date" name="end_date" value="2016-01-01">
 				</div>
 			</div>
+		</tr>
+		</table>
 	</td>
 </tr>
 <tr>
