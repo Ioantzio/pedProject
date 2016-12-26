@@ -15,7 +15,7 @@
 		$movie_start_date = $_SESSION['start_date'];
 		$movie_end_date = $_SESSION['end_date'];
 		
-		$movie_info = serialize($movie_info);
+		$movie_info = base64_encode(json_encode($movie_info));
 		$movie_info = mysqli_real_escape_string($con, $movie_info);
 		
 		$query="insert into movies(movie, movie_shows, start_date, end_date) values(
@@ -28,10 +28,14 @@
 		if(mysqli_query($con, $query))
 		{
 			echo "Data insertion successfully";
+			echo "<hr>";
 		}
 		else
 		{
 			echo "Data insertion failed";
+			echo "<hr>";
+			echo "<input type=\"button\" value=\"Return to home page\" onclick=\"location.href='../admin.html'\">";
+			echo "&nbsp";
 		}
 		
 		echo "<input type=\"button\" value=\"Return to home page\" onclick=\"location.href='../admin.html'\">";

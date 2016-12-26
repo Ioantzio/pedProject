@@ -20,6 +20,7 @@
 		{
 			$movie = $data[1];
 			$movie_shows = deformat($data[2]);
+			$movie_shows_test = $data[2];
 			$start_date = format_date($data[3]);
 			$end_date = format_date($data[4]);
 			
@@ -28,16 +29,12 @@
 			echo "Start date: $start_date";
 			echo "<br>";
 			echo "End date: $end_date";
-			foreach($movie_shows as $time_group=>$time_group_time)
-			{
-				echo "<br><b>" . $time_group . "</b><br>";
-				foreach($time_group_time as $time)
-				{
-					echo $time . "<br>";
-				}
-			}
-			echo "<br><hr><br>";
+			echo "<br>";
+			
+			showSchedule($movie_shows);
+			echo "<hr>";
 		}
+		echo "<input type=\"button\" value=\"Return to home page\" onclick=\"location.href='../admin.html'\">";
 	}
 	elseif(!($con))
 	{
@@ -54,9 +51,39 @@
 	
 	mysqli_close($con);
 	
+	function showSchedule($show_cinemas)
+	{
+		if(!is_null($show_cinemas))
+		{
+			echo "<table>";
+			foreach($show_cinemas as $time_group=>$time_group_time)
+			{
+				echo "<td>";
+				echo "<table border=\"solid 1px\">";
+				echo "<tr>";
+				echo "<th><b>" . $time_group . "</b></th>";
+				echo "<td>";
+				foreach($time_group_time as $time)
+				{
+					echo $time;
+					echo "<br>";
+				}
+				echo "</td>";
+				echo "</tr>";
+				echo "</table>";
+				echo "</td>";
+			}
+			echo "</table>";
+		}
+		else
+		{
+			echo "<br><b>Error with showSchedule.</b>";
+		}
+	}
+	
 	function deformat($data)
 	{
-		$data = unserialize($data);
+		$data = json_decode(base64_decode($data, true));
 		return $data;
 	}
 	

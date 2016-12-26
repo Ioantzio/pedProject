@@ -19,6 +19,7 @@ if(!empty($movie) && $startDate != '01/01/2016' && $endDate != '01/01/2016')
 else
 {
 	echo "There is an empty field.";
+	echo "<hr>";
 }
 
 function cinemas()
@@ -112,21 +113,32 @@ function getTimeGroup($time_group_per_cinema, $cinemas)
 
 function showSchedule($show_cinemas)
 {
-	if(!empty($show_cinemas))
-	{
-		foreach($show_cinemas as $time_group=>$time_group_time)
+	if(!is_null($show_cinemas))
 		{
-			echo "<br><b>" . $time_group . "</b><br>";
-			foreach($time_group_time as $time)
+			echo "<table>";
+			foreach($show_cinemas as $time_group=>$time_group_time)
 			{
-				echo $time . "<br>";
+				echo "<td>";
+				echo "<table border=\"solid 1px\">";
+				echo "<tr>";
+				echo "<th><b>" . $time_group . "</b></th>";
+				echo "<td>";
+				foreach($time_group_time as $time)
+				{
+					echo $time;
+					echo "<br>";
+				}
+				echo "</td>";
+				echo "</tr>";
+				echo "</table>";
+				echo "</td>";
 			}
+			echo "</table>";
 		}
-	}
-	else
-	{
-		// echo "\$show_cinemas.";
-	}
+		else
+		{
+			echo "<br><b>Error with showSchedule.</b>";
+		}
 	
 	insert_data($show_cinemas);
 }
@@ -168,5 +180,6 @@ function clean_input($data)
 	return $data;
 }
 
+// echo "<hr>";
 echo "<input type=\"button\" name=\"previousPage\" value=\"Return to previous page\" onclick=\"location.href='admin.html';\"/>";
 ?>

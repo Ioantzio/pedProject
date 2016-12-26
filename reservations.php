@@ -32,6 +32,15 @@
 	<table id="form_table">
 	<tr>
 		<td>
+			<SELECT name="movie">
+			<option value="Fantastic Beasts and Where To Find Them" selected>Fantastic Beasts and Where To Find Them
+			<option value="Creed">Creed
+			<option value="Deadpool">Deadpool
+			<option value="Antman">Antman
+		</td>
+	</tr>
+	<tr>
+		<td>
 			<SELECT name="cinema">
 			<option value="New York Star" selected>New York Star
 			<option value="Whiskonsin Star">Whiskonsin Star
@@ -44,16 +53,7 @@
 	</tr>
 	<tr>
 		<td>
-			<SELECT name="movie">
-			<option value="Fantastic Beasts and Where To Find Them" selected>Fantastic Beasts and Where To Find Them
-			<option value="Creed">Creed
-			<option value="Deadpool">Deadpool
-			<option value="Antman">Antman
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<input type="submit" value="Pick date">
+			<input type="submit" name="Date" value="Date">
 		</td>
 	</tr>
 	</table>
@@ -63,9 +63,14 @@
 </table>
 
 <?php
-	if(!empty($_POST['movie']))
+	if(isset($_POST['Date']))
 	{
 		connect_to_db();
+	}
+	
+	if(isset($_POST['Buy']))
+	{
+		echo "Ticket bought";
 	}
 
 	function connect_to_db()
@@ -80,10 +85,10 @@
 		
 		if($con && $db)
 		{
-			$movie = $_POST['movie'];
-			$cinema = $_POST['cinema'];
+			$movie_chosen = $_POST['movie'];
+			$cinema_chosen = $_POST['cinema'];
 			
-			$query="SELECT * FROM movies WHERE movie = '$movie'";
+			$query="SELECT * FROM movies";
 			$result = mysqli_query($con, $query);
 			
 			$i = 0;
@@ -91,19 +96,70 @@
 			while($data = mysqli_fetch_row($result))
 			{
 				$movie = $data[1];
-				//$movie_shows = unserialize($data[2]);
+				$movie_shows = deformat($data[2]);
 				$start_date = format_date($data[3]);
 				$end_date = format_date($data[4]);
 				
-				echo "<b>$movie</b>";
-				echo "<br>";
-				echo "Start date: $start_date";
-				echo "<br>";
-				echo "End date: $end_date";
-				echo "<br><hr><br>";
-				$i++;
+				if($movie == $movie_chosen)
+				{
+					session_start();
+					$_SESSION['movie_picked'] = $movie_chosen;
+					$_SESSION['cinema_picked'] = $cinema_chosen;
+					
+					echo "<hr>";
+					echo "<b>$movie</b>";
+					echo "<br>";
+					echo "Start date: $start_date";
+					echo "<br>";
+					echo "End date: $end_date";
+					echo "<br><br>";
+					
+					$date = date("d/m/Y", time());
+					$day = 86400;
+					
+					$increment = $day;
+					
+					echo "<FORM action=\"checkout.php\" method=\"post\">";
+					echo "<b>Date</b>";
+					echo "<br>";
+					echo "<SELECT name=\"date\">";
+					
+					do
+					{
+						echo "<option value=\"$date\">" . $date;
+						
+						$date = date("d/m/Y", time()+$increment);
+						$increment = $increment + $day;
+					} while(!($date == $end_date));
+					
+					echo "</select>";
+					echo "<br><br>";
+					
+					foreach($movie_shows as $time_group=>$time_group_time)
+					{
+						if($time_group == $cinema_chosen)
+						{
+							echo "<b>" . $time_group . "</b>";
+							echo "<br>";
+							echo "<SELECT name=\"time\">";
+							foreach($time_group_time as $time)
+							{
+								echo "<option value=\"$time\">" . $time;
+							}
+							echo "</select>";
+						}
+					}
+					
+					echo "<br><hr><br>";
+					$i++;
+					echo "<input type=\"submit\" name=\"Buy\" value=\"Buy\">";
+				}
 			}
 			
+			if(!isset($day))
+			{
+				echo "No showings of the chosen movie or chosen cinema.";
+			}
 			mysqli_close($con);
 		}
 		else if(!($con))
@@ -118,8 +174,6 @@
 		{
 			echo "Error: Something unexpected occured.";
 		}
-		
-		//echo "<input type=\"button\" name=\"show_movies\" value=\"Show movies\" onclick=\"location.href='DAO/show_data.php';\"/>";
 	}
 	
 	function format_date($date)
@@ -127,6 +181,12 @@
 		$date = new DateTime($date);
 		$date = $date -> format('d/m/Y');
 		return $date;
+	}
+	
+	function deformat($data)
+	{
+		$data = json_decode(base64_decode($data, true));
+		return $data;
 	}
 ?>
 
