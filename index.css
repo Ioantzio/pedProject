@@ -1,0 +1,64 @@
+ body {
+	background-color: #eeeeee;
+}
+
+div{
+	display: block;
+}
+
+a:link{
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5{
+	margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+    font-size: 1em;
+    text-rendering: optimizelegibility
+}
+
+.button {
+    width:300px;
+    height:100px;
+	border: solid 1px #111111;
+	box-shadow: 4px 4px 4px 0px #111111;
+	padding: 0 2px;
+	margin: 0 15px 0 0;
+    font-size:15px;
+    text-decoration:none;
+}
+
+.space{
+	height: 40px;
+    padding: 0 10px;
+    background: #eeeeee;
+    margin-bottom: 15px;
+    line-height: 40px;
+}
+
+#title {
+	font-size: 2em;
+	color: #111111;
+}
+
+#title_cell, #DAO_pages, #show_data_page, #option_pages{
+	text-align: center;
+}
+
+ #title_row{
+	border: solid 2px black;
+ }
+
+#page_table{
+	width: 100%;
+}
+
+#title_table{
+	width: 100%;
+	background-color: orange;
+}
+
+#title_table td{
+	width: 20%;
+}
