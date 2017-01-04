@@ -11,7 +11,7 @@
 <body>
 <table id="page_table">
 <tr>
-	<td>
+	<td id="title_row">
 	<table id="title_table">
 	<tr>
 		<td>
@@ -19,8 +19,7 @@
 		<td id="title_cell">
 			<center><font id="title">Welcome to CinemaStar</font></center>
 		</td>
-		<td id="home_cell">
-			<a id="home_link" href="index.html" target="_blank">Home</a>
+		<td id="reservations_cell">
 		</td>
 	</tr>
 	</table>
@@ -112,7 +111,9 @@
 					echo "Start date: $start_date";
 					echo "<br>";
 					echo "End date: $end_date";
-					echo "<br><br>";
+					echo "<br><br>";	
+					echo "$cinema_chosen";
+					echo "<br>";
 					
 					$date = date("d/m/Y", time());
 					$day = 86400;
@@ -139,7 +140,7 @@
 					{
 						if($time_group == $cinema_chosen)
 						{
-							echo "<b>" . $time_group . "</b>";
+							echo "<b>Time</b>";
 							echo "<br>";
 							echo "<SELECT name=\"time\">";
 							foreach($time_group_time as $time)

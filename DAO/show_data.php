@@ -1,3 +1,4 @@
+<link rel="icon" href="http://i.imgur.com/hB4xj4K.png">
 <?php
 	$host = "localhost";
 	$user = "root";
@@ -5,7 +6,7 @@
 	$database = "3522_3543";
 	
 	$con = mysqli_connect($host, $user, $password);
-	$db = mysqli_select_db($con, $database) or die("Unable to select database");
+	$db = mysqli_select_db($con, $database);
 	
 	if($con && $db)
 	{
@@ -13,28 +14,41 @@
 		
 		$result = mysqli_query($con, $query);
 		
-		echo "<b>Database output</b>";
-		echo "<hr>";
-		
-		while($data = mysqli_fetch_row($result))
+		if(!empty(mysqli_fetch_row($result)))
 		{
-			$movie = $data[1];
-			$movie_shows = deformat($data[2]);
-			$movie_shows_test = $data[2];
-			$start_date = format_date($data[3]);
-			$end_date = format_date($data[4]);
+			echo "<table border=\"solid 2px\"><tr>";
 			
-			echo "<b>$movie</b>";
-			echo "<br>";
-			echo "Start date: $start_date";
-			echo "<br>";
-			echo "End date: $end_date";
-			echo "<br>";
-			
-			showSchedule($movie_shows);
-			echo "<hr>";
+			while($data = mysqli_fetch_row($result))
+			{
+				$movie = $data[1];
+				$movie_shows = deformat($data[2]);
+				$movie_shows_test = $data[2];
+				$start_date = format_date($data[3]);
+				$end_date = format_date($data[4]);
+				
+				echo "<td>";
+				echo "<table>";
+				echo "<tr>";
+				echo "<th><b>$movie</b></th>";
+				echo "</tr>";
+				echo "<tr><td>";
+				echo "Start date: $start_date";
+				echo "</td></tr>";
+				echo "<tr><td>";
+				echo "End date: $end_date";
+				echo "</td></tr>";
+				echo "</tr>";
+				
+				showSchedule($movie_shows);
+				echo "</td>";
+			}
 		}
-		echo "<input type=\"button\" value=\"Return to home page\" onclick=\"location.href='../admin.html'\">";
+		else
+		{
+			echo "No data found.";
+		}
+		echo "</tr>";
+		echo "</table>";
 	}
 	elseif(!($con))
 	{
@@ -49,6 +63,11 @@
 		echo "Error: Something unexpected occured.";
 	}
 	
+	echo "<hr>";
+	echo "<input type=\"button\" value=\"Administration page\" onclick=\"location.href='../index.html'\">";
+	echo "&nbsp";
+	echo "<input type=\"button\" value=\"Close this window\" onclick=\"self.close()\">";
+	
 	mysqli_close($con);
 	
 	function showSchedule($show_cinemas)
@@ -58,20 +77,22 @@
 			echo "<table>";
 			foreach($show_cinemas as $time_group=>$time_group_time)
 			{
+				echo "<tr>";
 				echo "<td>";
 				echo "<table border=\"solid 1px\">";
 				echo "<tr>";
 				echo "<th><b>" . $time_group . "</b></th>";
 				echo "<td>";
+				echo "<SELECT name=\"time\">";
 				foreach($time_group_time as $time)
 				{
-					echo $time;
-					echo "<br>";
+					echo "<option value=\"$time\">" . $time;
 				}
 				echo "</td>";
 				echo "</tr>";
 				echo "</table>";
 				echo "</td>";
+				echo "</tr>";
 			}
 			echo "</table>";
 		}

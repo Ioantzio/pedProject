@@ -1,3 +1,4 @@
+<link rel="icon" href="http://i.imgur.com/hB4xj4K.png">
 <?php
 	$host = "localhost";
 	$user = "root";
@@ -5,7 +6,7 @@
 	$database = "3522_3543";
 	
 	$con = mysqli_connect($host, $user, $password);
-	$db = mysqli_select_db($con, $database) or die("Unable to select database");
+	$db = mysqli_select_db($con, $database);
 	
 	if($con && $db)
 	{
@@ -28,17 +29,11 @@
 		if(mysqli_query($con, $query))
 		{
 			echo "Data insertion successfully";
-			echo "<hr>";
 		}
 		else
 		{
 			echo "Data insertion failed";
-			echo "<hr>";
-			echo "<input type=\"button\" value=\"Return to home page\" onclick=\"location.href='../admin.html'\">";
-			echo "&nbsp";
 		}
-		
-		echo "<input type=\"button\" value=\"Return to home page\" onclick=\"location.href='../admin.html'\">";
 	}
 	elseif(!($con))
 	{
@@ -53,5 +48,9 @@
 		echo "Error: Something unexpected occured.";
 	}
 	
+	echo "<hr>";
+	echo "<input type=\"button\" value=\"Administration page\" onclick=\"location.href='../index.html'\">";
+	echo "&nbsp";
+	echo "<input type=\"button\" value=\"Close this window\" onclick=\"self.close()\">";
 	mysqli_close($con);
 ?>

@@ -1,3 +1,4 @@
+<link rel="icon" href="http://i.imgur.com/hB4xj4K.png">
 <?php
 session_start();
 

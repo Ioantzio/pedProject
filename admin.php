@@ -1,3 +1,4 @@
+<link rel="icon" href="http://i.imgur.com/hB4xj4K.png">
 <?php
 $movie = clean_input($_POST['movie']);
 $startDate = format_date($_POST['start_date']);
