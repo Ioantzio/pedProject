@@ -15,16 +15,11 @@
 	<table id="title_table">
 	<tr>
 		<td>
-		<table id="user_table">
-		<tr>
-		</tr>
-		</table>
 		</td>
 		<td id="title_cell">
-				<center><font id="title">Welcome to CinemaStar</font></center>
+			<center><font id="title">Welcome to CinemaStar</font></center>
 		</td>
 		<td id="reservations_cell">
-		
 		</td>
 	</tr>
 	</table>
@@ -145,7 +140,6 @@
 					{
 						if($time_group == $cinema_chosen)
 						{
-							// echo "<b>" . $time_group . "</b>";
 							echo "<b>Time</b>";
 							echo "<br>";
 							echo "<SELECT name=\"time\">";

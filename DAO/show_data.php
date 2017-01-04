@@ -67,7 +67,7 @@
 	echo "<input type=\"button\" value=\"Administration page\" onclick=\"location.href='../index.html'\">";
 	echo "&nbsp";
 	echo "<input type=\"button\" value=\"Close this window\" onclick=\"self.close()\">";
-
+	
 	mysqli_close($con);
 	
 	function showSchedule($show_cinemas)
