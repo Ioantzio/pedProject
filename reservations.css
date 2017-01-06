@@ -11,6 +11,19 @@ a:link{
 	color: #111111;
 }
 
+#page_table{
+	width: 100%;
+}
+
+#title_table{
+	width: 100%;
+	background-color: orange;
+}
+
+#title_table td{
+	width: 33%;
+}
+
 #title_row{
 	border: solid 2px black;
 }
@@ -44,17 +57,4 @@ h3{
 
 h4{
 	color: #dd0000;
-}
-
-#page_table{
-	width: 100%;
-}
-
-#title_table{
-	width: 100%;
-	background-color: orange;
-}
-
-#title_table td{
-	width: 33%;
 }
