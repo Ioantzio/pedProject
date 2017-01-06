@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<link type="text/css" rel="stylesheet" href="index.css"/>
+	<link type="text/css" rel="stylesheet" href="reservations.css"/>
 	<link rel="icon" href="http://i.imgur.com/hB4xj4K.png">
 	
 	<title>Welcome to Cinema Star</title>
@@ -19,7 +19,8 @@
 		<td id="title_cell">
 			<center><font id="title">Welcome to CinemaStar</font></center>
 		</td>
-		<td id="reservations_cell">
+		<td id="home_page_cell">
+			<a id="home_page" href="cinema.html">Home</a>
 		</td>
 	</tr>
 	</table>
