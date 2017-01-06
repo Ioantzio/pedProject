@@ -6,17 +6,42 @@ a:link{
 	text-decoration: none;
 }
 
-#title{
-	font-size: 40px;
-	color: #E66414;
+#page_table{
+	width: 100%;
+}
+
+#title_table{
+	width: 100%;
+	background-color: orange;
+}
+
+#title_row{
+	border: solid 2px black;
 }
 
 #title_cell{
 	text-align: center;
 }
 
-#home_cell {
+#home_page_cell {
 	text-align: right;
+}
+
+#title_table td{
+	width: 33%;
+}
+
+#home_page {
+	position: relative;
+	text-align: right;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #eeeeee;
+}
+
+#title{
+	font-size: 2em;
+	color: #111111;
 }
 
 #home_link {
@@ -40,17 +65,4 @@ h3{
 
 h4{
 	color: #dd0000;
-}
-
-#page_table{
-	width: 100%;
-}
-
-#title_table{
-	width: 100%;
-	background-color: #111111;
-}
-
-#title_table td{
-	width: 33%;
 }
