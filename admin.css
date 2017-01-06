@@ -1,4 +1,4 @@
- body {
+body{
 	background-color: #eeeeee;
 }
 
@@ -16,6 +16,14 @@ h1, h2, h3, h4, h5{
     font-weight: normal;
     font-size: 1em;
     text-rendering: optimizelegibility
+}
+
+.space{
+	height: 40px;
+    padding: 0 10px;
+    background: #eeeeee;
+    margin-bottom: 15px;
+    line-height: 40px;
 }
 
 .cinema_box{
@@ -48,14 +56,6 @@ h1, h2, h3, h4, h5{
 	width: 100%;
 }
 
-.space{
-	height: 40px;
-    padding: 0 10px;
-    background: #eeeeee;
-    margin-bottom: 15px;
-    line-height: 40px;
-}
-
 #movie_and_date, #cinema_and_time{
 	display: block;
 	color: #ff8d07;
@@ -63,32 +63,28 @@ h1, h2, h3, h4, h5{
 	font-size: 2em;
 }
 
-#submit{
-	text-align: center;
-}
-
-#movie_input{
-	width: 95%;
-}
-
 #page_table{
 	width: 100%;
 }
 
-#title {
+#title_table{
+	width: 100%;
+	background-color: orange;
+}
+
+#title_row{
+	border: solid 2px black;
+}
+
+#title_cell, #submit{
+	text-align: center;
+}
+
+#title{
 	font-size: 2em;
 	color: #111111;
 }
 
-#title_cell{
-	text-align: center;
-}
-
- #title_row{
-	border: solid 2px black;
- }
-
-#title_table{
-	width: 100%;
-	background-color: orange;
+#movie_input{
+	width: 95%;
 }

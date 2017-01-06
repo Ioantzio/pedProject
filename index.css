@@ -1,4 +1,4 @@
-body {
+body{
 	background-color: #eeeeee;
 }
 
@@ -49,13 +49,13 @@ h1, h2, h3, h4, h5{
 #title_row{
 	border: solid 2px black;
 }
- 
-#title_cell, #DAO_pages, #show_data_page, #option_pages{
-	text-align: center;
-}
 
 #title_table td{
 	width: 20%;
+}
+ 
+#title_cell, #DAO_pages, #show_data_page, #option_pages{
+	text-align: center;
 }
 
 #title {

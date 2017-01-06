@@ -1,4 +1,4 @@
-body {
+body{
 	background-color: #eeeeee;
 }
 
@@ -18,11 +18,12 @@ h1, h2, h3, h4, h5{
     text-rendering: optimizelegibility
 }
 
-ul{
-	margin: 0;
-    padding: 0;
-    list-style: none;
-	display: block;
+.space{
+	height: 40px;
+    padding: 0 10px;
+    background: #eeeeee;
+    margin-bottom: 15px;
+    line-height: 40px;
 }
 
 .movie_box{
@@ -50,19 +51,33 @@ ul{
     border: none;
 }
 
-.space{
-	height: 40px;
-    padding: 0 10px;
-    background: #eeeeee;
-    margin-bottom: 15px;
-    line-height: 40px;
+#page_table{
+	width: 100%;
 }
 
-#PN, #CS{
-	display: block;
-	color: #ff8d07;
-	border-bottom: solid 2px #000000;
-	font-size: 2em;
+#title_table{
+	width: 100%;
+	background-color: orange;
+}
+
+#title_row{
+	border: solid 2px black;
+}
+
+#user_table td{
+	width: 70px;
+}
+
+#title_table td{
+	width: 20%;
+}
+
+#reservations_cell{
+	text-align: right;
+}
+
+#title_cell{
+	text-align: center;
 }
 
 #reservations {
@@ -78,33 +93,11 @@ ul{
 	color: #111111;
 }
 
-#title_cell{
-	text-align: center;
-}
-
-#title_row{
-	border: solid 2px black;
-}
-
-#reservations_cell{
-	text-align: right;
-}
-
-#page_table{
-	width: 100%;
-}
-
-#title_table{
-	width: 100%;
-	background-color: orange;
-}
-
-#title_table td{
-	width: 20%;
-}
-
-#user_table td{
-	width: 70px;
+#PN, #CS{
+	display: block;
+	color: #ff8d07;
+	border-bottom: solid 2px #000000;
+	font-size: 2em;
 }
 
 #PN_table td:hover {background-color: #ff8d07}
