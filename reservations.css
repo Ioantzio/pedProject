@@ -36,11 +36,12 @@ a:link{
 	text-align: right;
 }
 
-#home_link {
+#home_page {
 	position: relative;
 	text-align: right;
-	font-size: 22px;
-	color: red;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #eeeeee;
 }
  
 h2{
